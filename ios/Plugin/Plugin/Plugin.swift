@@ -108,6 +108,15 @@ public class IntercomPlugin: CAPPlugin {
     Intercom.presentMessageComposer(initialMessage);
     call.success()
   }
+
+  @objc func displayCarousel(_ call: CAPPluginCall) {
+    guard let carrouselId = call.getString("carrouselId") else {
+      call.error("CarrouselId error")
+      return
+    }
+    Intercom.presentCarousel(carrouselId);
+    call.success()
+  }
   
   @objc func displayHelpCenter(_ call: CAPPluginCall) {
     Intercom.presentHelpCenter()
@@ -115,7 +124,7 @@ public class IntercomPlugin: CAPPlugin {
   }
   
   @objc func hideMessenger(_ call: CAPPluginCall) {
-    Intercom.hide()
+    Intercom.hideMessenger()
     call.success()
   }
   
