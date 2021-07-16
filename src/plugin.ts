@@ -35,6 +35,10 @@ export class Intercom implements IntercomProtocol {
     return IntercomPlugin.displayMessageComposer(options);
   }
 
+  displayCarousel(options: { carrouselId: string }): Promise<void> {
+    return IntercomPlugin.displayCarousel(options);
+  }
+
   displayHelpCenter(): Promise<void> {
     return IntercomPlugin.displayHelpCenter();
   }

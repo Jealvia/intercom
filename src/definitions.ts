@@ -15,6 +15,7 @@ export interface IntercomProtocol {
   logEvent(options: { name: string; data?: any }): Promise<void>;
   displayMessenger(): Promise<void>;
   displayMessageComposer(options: { message: string }): Promise<void>;
+  displayCarousel(options: { carrouselId: string }): Promise<void>;
   displayHelpCenter(): Promise<void>;
   hideMessenger(): Promise<void>;
   displayLauncher(): Promise<void>;

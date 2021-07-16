@@ -162,6 +162,13 @@ public class IntercomPlugin extends Plugin {
     }
 
     @PluginMethod()
+    public void displayCarousel(PluginCall call) {
+        String carrouselId = call.getString("carrouselId");
+        Intercom.client().displayCarousel(carrouselId);
+        call.success();
+    }
+
+    @PluginMethod()
     public void setUserHash(PluginCall call) {
         String hmac = call.getString("hmac");
         Intercom.client().setUserHash(hmac);
